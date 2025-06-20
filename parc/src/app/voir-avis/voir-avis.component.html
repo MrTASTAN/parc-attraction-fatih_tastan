@@ -1,0 +1,28 @@
+<h2>Avis laissés pour l’attraction : {{ nomAttraction }}</h2>
+
+<ng-container *ngIf="avis?.length > 0; else pasEncoreAvis">
+  <mat-card *ngFor="let commentaire of avis" class="carte-avis">
+    <mat-card-header>
+      <mat-card-title>
+        <strong>Note attribuée :</strong> ⭐ {{ commentaire.note }} / 5
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p><strong>Commentaire :</strong> {{ commentaire.texte }}</p>
+
+      <ng-container *ngIf="!commentaire.anonyme && commentaire.nom; else affichageAnonyme">
+        <p><strong>Auteur :</strong> {{ commentaire.nom }} {{ commentaire.prenom }}</p>
+      </ng-container>
+
+      <ng-template #affichageAnonyme>
+        <p><em>Avis publié de manière anonyme</em></p>
+      </ng-template>
+    </mat-card-content>
+  </mat-card>
+</ng-container>
+
+<ng-template #pasEncoreAvis>
+  <mat-card>
+    <mat-card-title>Aucun avis n’a encore été déposé</mat-card-title>
+  </mat-card>
+</ng-template>

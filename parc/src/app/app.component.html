@@ -1,0 +1,11 @@
+<mat-toolbar color="primary">
+  <span class="titre-application">
+    <a routerLink="/accueil" class="lien-accueil">🎢 Parc d'Attraction</a>
+  </span>
+  <span class="espace-rempli"></span>
+  <ng-container *ngIf="authService.isLoggedIn">
+    <button mat-button color="accent" (click)="logout()">Se déconnecter</button>
+  </ng-container>
+</mat-toolbar>
+
+<router-outlet></router-outlet>

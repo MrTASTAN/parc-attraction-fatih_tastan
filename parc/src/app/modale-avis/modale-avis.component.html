@@ -1,0 +1,38 @@
+<h2 mat-dialog-title>Donnez votre avis sur : {{ data.attractionNom }}</h2>
+
+<mat-dialog-content>
+  <form [formGroup]="avisForm">
+    <mat-form-field appearance="fill">
+      <mat-label>Commentaire</mat-label>
+      <textarea matInput rows="4" formControlName="texte"></textarea>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Note (1 à 5)</mat-label>
+      <input matInput type="number" min="1" max="5" formControlName="note" />
+    </mat-form-field>
+
+    <mat-checkbox formControlName="anonyme">
+      Envoyer de manière anonyme
+    </mat-checkbox>
+
+    <div *ngIf="avisForm.get('anonyme')?.value === false">
+      <mat-form-field appearance="fill">
+        <mat-label>Nom</mat-label>
+        <input matInput formControlName="nom" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Prénom</mat-label>
+        <input matInput formControlName="prenom" />
+      </mat-form-field>
+    </div>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Fermer</button>
+  <button mat-raised-button color="primary" (click)="soumettreAvis()" [disabled]="avisForm.invalid">
+    Valider l’avis
+  </button>
+</mat-dialog-actions>

@@ -1,0 +1,44 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      Gestion des attractions
+      <button mat-raised-button color="primary" (click)="addAttraction()">Ajouter</button>
+    </mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <div class="attraction-header">
+      <div class="attraction-labels">
+        <span>Nom</span>
+        <span>Description</span>
+        <span>Difficulté</span>
+        <span>Visibilité</span>
+      </div>
+    </div>
+
+    <div *ngIf="attractions | async as listeAttractions">
+      <div *ngFor="let form of formulaireAttractions; let i = index" [formGroup]="form" class="attraction-form">
+        <mat-form-field appearance="fill" class="champ">
+          <mat-label>Nom</mat-label>
+          <input matInput formControlName="nom">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="champ">
+          <mat-label>Description</mat-label>
+          <input matInput formControlName="description">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="champ">
+          <mat-label>Difficulté (1 à 5)</mat-label>
+          <input matInput type="number" formControlName="difficulte">
+        </mat-form-field>
+
+        <mat-slide-toggle formControlName="visible" class="champ">
+          Visible ?
+        </mat-slide-toggle>
+
+        <button mat-stroked-button color="accent" class="champ" (click)="onSubmit(form)">Valider</button>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

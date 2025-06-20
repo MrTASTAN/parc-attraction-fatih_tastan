@@ -1,0 +1,11 @@
+{
+  "WELCOME": "Bienvenue sur la plateforme du parc d'attractions",
+  "LANGUAGE": "Choix de la langue",
+  "HOME.TITLE": "Page d’accueil",
+  "ATTRACTION.NAME": "Nom de l’attraction",
+  "ATTRACTION.DESCRIPTION": "Détails",
+  "ATTRACTION.DIFFICULTY": "Niveau de difficulté",
+  "ATTRACTION.ACTIONS": "Options disponibles",
+  "ATTRACTION.ADD_REVIEW": "Laisser un avis",
+  "ATTRACTION.VIEW_REVIEWS": "Consulter les avis"
+}

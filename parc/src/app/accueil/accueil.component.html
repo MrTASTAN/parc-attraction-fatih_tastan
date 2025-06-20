@@ -1,0 +1,39 @@
+<mat-card class="page-accueil">
+  <mat-card-header>
+    <mat-card-title>{{ 'WELCOME' | translate }}</mat-card-title>
+
+    <!-- 🌍 Sélection de la langue -->
+    <div class="select-langues">
+      <button class="btn-langue" (click)="changeLanguage('fr')">🇫🇷 Français</button>
+      <button class="btn-langue" (click)="changeLanguage('en')">🇬🇧 English</button>
+    </div>
+  </mat-card-header>
+
+  <mat-card-content>
+    <!-- 🏁 En-têtes des colonnes -->
+    <div class="en-tete-attraction">
+      <span>{{ 'ATTRACTION.NAME' | translate }}</span>
+      <span>{{ 'ATTRACTION.DESCRIPTION' | translate }}</span>
+      <span>{{ 'ATTRACTION.DIFFICULTY' | translate }}</span>
+      <span>{{ 'ATTRACTION.ACTIONS' | translate }}</span>
+    </div>
+
+    <!-- 🎢 Liste des attractions -->
+    <ng-container *ngFor="let item of attractions | async">
+      <div class="bloc-attraction">
+        <span>{{ item.nom }}</span>
+        <span>{{ item.description }}</span>
+        <span class="niveau-difficulte">⭐ {{ item.difficulte }} / 5</span>
+
+        <div class="zone-actions">
+          <button class="btn-ajouter" (click)="ajouterAvis(item.nom)">
+            <mat-icon>edit</mat-icon> {{ 'ATTRACTION.ADD_REVIEW' | translate }}
+          </button>
+          <button class="btn-voir" (click)="item.attraction_id !== null ? voirAvis(item.attraction_id) : null">
+            <mat-icon>visibility</mat-icon> {{ 'ATTRACTION.VIEW_REVIEWS' | translate }}
+          </button>
+        </div>
+      </div>
+    </ng-container>
+  </mat-card-content>
+</mat-card>

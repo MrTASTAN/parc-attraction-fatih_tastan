@@ -1,0 +1,30 @@
+.attraction-header {
+  background-color: #bdbdbd;
+  padding: 12px 20px;
+  border-radius: 8px;
+  margin: 30px 0 15px;
+  font-weight: 600;
+  font-size: 16px;
+  display: flex;
+  gap: 30px;
+  width: max-content;
+
+  .attraction-labels span {
+    width: 220px;
+    text-align: center;
+  }
+}
+
+.attraction-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 15px 0;
+  border-bottom: 1px solid #ccc;
+
+  .champ {
+    width: 220px;
+    margin-bottom: 10px;
+  }
+}

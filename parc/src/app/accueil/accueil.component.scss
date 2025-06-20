@@ -1,0 +1,105 @@
+.en-tete-attraction {
+  background-color: #3a3a3a;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 600;
+  padding: 12px 20px;
+  border-radius: 6px;
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-around;
+
+  span {
+    flex: 1;
+    text-align: center;
+  }
+}
+
+.bloc-attraction {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  border-bottom: 1px solid #ccc;
+  width: 100%;
+  gap: 16px;
+  transition: background-color 0.25s ease;
+
+  &:hover {
+    background-color: #f0f0f0;
+  }
+
+  span {
+    flex: 1;
+    text-align: center;
+    color: #222;
+  }
+
+  .niveau-difficulte {
+    color: #f39c12;
+    font-weight: 600;
+  }
+}
+
+.zone-actions {
+  display: flex;
+  gap: 10px;
+
+  button {
+    padding: 7px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      opacity: 0.9;
+    }
+
+    &.btn-ajouter {
+      background-color: #1976d2;
+      color: #fff;
+
+      &:hover {
+        background-color: #0d47a1;
+      }
+    }
+
+    &.btn-voir {
+      background-color: #e91e63;
+      color: #fff;
+
+      &:hover {
+        background-color: #ad1457;
+      }
+    }
+  }
+}
+
+.select-langues {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.btn-langue {
+  padding: 8px 10px;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 4px;
+  background-color: #388e3c;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: #2e7d32;
+  }
+}
